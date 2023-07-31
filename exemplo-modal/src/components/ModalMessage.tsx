@@ -27,12 +27,10 @@ export default function ModalMessage({
       <Modal.Content>
         {modalContent}
       </Modal.Content>
-      <Modal.Actions 
-        onSave={handleSave}
-        onClose={handleClose}
-        saveTextButton={saveTextButton}
-        closeTextButton={closeTextButton}
-      />
+      <Modal.Actions>
+        <Modal.Button text={closeTextButton} onClick={handleClose} />
+        <Modal.Button text={saveTextButton} onClick={handleSave} variant='contained' />
+      </Modal.Actions>
     </Modal.Root>
   );
 }
