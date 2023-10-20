@@ -1,22 +1,14 @@
+import { ReactNode } from "react";
 import { DialogActions } from "@mui/material";
-import Button from '@mui/material/Button';
 
 interface ModalActionsProps {
-  saveTextButton: string;
-  closeTextButton: string;
-  onSave: () => void;
-  onClose: () => void;
+  children: ReactNode;
 }
 
-export function ModalActions({ onSave, onClose, saveTextButton, closeTextButton }: ModalActionsProps) {
+export function ModalActions({ children }: ModalActionsProps) {
   return (
     <DialogActions>
-      <Button onClick={onSave}>
-        {closeTextButton}
-      </Button>
-      <Button variant='contained' autoFocus onClick={onSave}>
-        {saveTextButton}
-      </Button>
+      {children}
     </DialogActions>
   );
 }
